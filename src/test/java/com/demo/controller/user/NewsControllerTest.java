@@ -36,9 +36,6 @@ class NewsControllerTest {
 
     @Test
     void newsTest() throws Exception {
-        // News news= newsService.findById(newsID);
-        // model.addAttribute("news",news);
-        // return "news";
         int id = 1;
         String title = "title";
         String content = "this is content";
@@ -58,10 +55,6 @@ class NewsControllerTest {
 
     @Test
     void news_listTest1() throws Exception {
-        // System.out.println("success");
-        // Pageable news_pageable= PageRequest.of(page-1,5,
-        // Sort.by("time").descending());
-        // return newsService.findAll(news_pageable);
         int id = 1;
         String title = "title";
         String content = "this is content";
@@ -79,12 +72,6 @@ class NewsControllerTest {
 
     @Test
     void news_listTest2() throws Exception {
-        // Pageable news_pageable= PageRequest.of(0,5, Sort.by("time").descending());
-        // List<News> news_list= newsService.findAll(news_pageable).getContent();
-        // model.addAttribute("news_list",news_list);
-        // model.addAttribute("total",
-        // newsService.findAll(news_pageable).getTotalPages());
-        // return "news_list";
         int id = 1;
         String title = "title";
         String content = "this is content";
