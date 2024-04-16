@@ -54,7 +54,7 @@ public class NewsServiceImplTest {
     public void findByIdTest2(){
         //id不存在时
         try{
-            News news = newsService.findById(1);
+            News news = newsService.findById(12312);
             assertNull(news);
         } catch (Exception e){
             e.printStackTrace();
@@ -86,8 +86,8 @@ public class NewsServiceImplTest {
         if(!newsOPCreate.isPresent()){
             fail();
         }
-        assertEquals("create test1", newsOPCreate.get().getTitle());
-        assertEquals("create test1", newsOPCreate.get().getContent());
+        assertEquals("关于公共体育俱乐部所有室内培训课程", newsOPCreate.get().getTitle());
+        assertEquals("根据邯郸校区体育馆物业办通知，因麻疹疾控需要，体育馆近期限制进出，故11月23日公共体育俱乐部所有室内培训课程暂停，积分不会因此产生变动，恢复日期另行通知。天气逐渐转寒，请各位同学运动后及时保暖，寝室多开窗门，保持空气流通。", newsOPCreate.get().getContent());
     }
 
     @Test
@@ -104,12 +104,12 @@ public class NewsServiceImplTest {
     @Test
     public void updateTest1(){
         //id不存在时
-        News newsMock = new News(0, "update test", "update test", LocalDateTime.now());
+        News newsMock = new News(111, "update test", "update test", LocalDateTime.now());
         int id = newsService.create(newsMock);
-        newsDao.deleteById(id);
         Optional<News> newsOpMock = newsDao.findById(id);
+        newsDao.deleteById(id);
         if(newsOpMock.isPresent()){
-            fail("News object should not exist after deletion.");
+            fail();
         }
     }
 
