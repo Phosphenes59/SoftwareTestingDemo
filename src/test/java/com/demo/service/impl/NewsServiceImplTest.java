@@ -1,27 +1,27 @@
-package com.demo.service;
+package com.demo.service.impl;
 
 import com.demo.dao.NewsDao;
 import com.demo.entity.News;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import com.demo.service.NewsService;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-@RunWith(SpringRunner.class)
-public class NewsServiceTest {
+@ExtendWith(MockitoExtension.class)
+public class NewsServiceImplTest {
     @Autowired
     NewsService newsService;
 
